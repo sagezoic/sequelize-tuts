@@ -52,8 +52,9 @@ const Users = sequelize.define('user', {
         defaultValue: 21
     },
     active: {
-        type: Sequelize.DataTypes.BOOLEAN
-    }
+        type: Sequelize.DataTypes.BOOLEAN,
+        defaultValue: true
+    },
 },{
     freezeTableName: true,
     timestamps: false
@@ -82,6 +83,6 @@ Users.sync( { alter: true } ).then((data)=>{
 //User.drop(); to drop a table
 //sequelize.drop() to delete each table.
 
-
 //sequelize.drop({match: /_test$/ }); // this will drop all tables ending with the _test
 //means match at the end
+
